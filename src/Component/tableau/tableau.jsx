@@ -20,21 +20,19 @@ class confirm extends Component {
     };
 
     submit1 = (a) => {
-    confirmAlert({
-        
-        message: 'Confirmer',
-        buttons: [
-        {
-            label: 'Ok',
-            onClick: () => this.props.editRow(a)
-        },
-        {
-            label: 'Annuler',
-        }
-        ]
-    })
+        confirmAlert({
+            message: 'Modification',
+            buttons: [
+            {
+                label: 'Ok',
+                onClick: () => this.props.deleteUser(a)
+            },
+            {
+                label: 'Annuler',
+            }
+            ]
+        })
     };
-
       render(){
             return (
                 <center>
@@ -56,7 +54,7 @@ class confirm extends Component {
                                     <td className="prix">{user.prix}</td>
                                     <td>
                                         <button className="btn btn-danger" onClick={()=>this.submit(user.id)}>X</button>
-                                        <a>&nbsp;</a><button className="btn btn-success" onClick={() =>this.submit1(user.id)}>Edit</button>
+                                        <a>&nbsp;</a><button type="submit" className="btn btn-success" onClick={() =>this.submit1(user.id)}>Edit</button>
                                     </td>
                                 </tr>
                             ))

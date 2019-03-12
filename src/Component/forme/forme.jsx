@@ -22,6 +22,7 @@ const Form = props => {
                   document.getElementById('valid').innerHTML= valid;
                } else {
                   valid="";
+                  document.getElementById('valid').innerHTML= valid;
                if (!user.prod || !user.prix) return 
                var x="";
                   for (let i=1;i<user.prod.length;i++){
