@@ -35,15 +35,7 @@ const App = () => {
     }
 
     return (
-      <form className="container bg-secondary"
-          onSubmit={event => {
-            event.preventDefault()
-            var t = 0;
-            for (let i = 0; i<users.length; i++) {
-              t= t + users.prix;
-            }
-            document.getElementById("total").innerHTML=t;
-            }}>
+      <div className="container bg-secondary">  
       <div className="flex-row">
         <div className="flex-large">
           <Form ajouter={ajouter} setCount={setCount} count={count}/>
@@ -51,14 +43,8 @@ const App = () => {
         <div className="flex-large">
           <Tableau users={users} deleteUser={deleteUser} editRow={editRow}/>
         </div>
-        <div className="flex-large">
-          <button className="btn btn-warning total" data-formTarget="#loginModal" data-toggle="modal">TOTAL</button>
-        </div>
-        <div className="flex-large total" id="total">
-        &nbsp;TOTAL =
         </div>
       </div>
-    </form>
     )
   };
 

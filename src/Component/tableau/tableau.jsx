@@ -4,34 +4,49 @@ import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 
 class confirm extends Component {
     submit = (a) => {
-        confirmAlert({
-         
-          message: 'Confirmer suppression',
-          buttons: [
-            {
-              label: 'Oui',
-              onClick: () => this.props.deleteUser(a)
-            },
-            {
-              label: 'Non',
-            }
-          ]
-        })
+      confirmAlert({
+        customUI: ({ onClose }) => {
+          return (  
+            <div className="custom-ui" id="popup">
+              <h6>Suppression Produit</h6><br/><br/>
+            <center>
+              <button className="btn btn-dark"
+                onClick={() => {
+                  this.props.deleteUser(a);
+                  onClose();
+                }}
+              >
+                OUI
+              </button><a>&nbsp;&nbsp;</a>
+              <button  className="btn btn-dark" onClick={onClose}>NON</button>
+              </center>
+            </div>
+          );
+        }
+      })
     };
 
     submit1 = (a) => {
         confirmAlert({
-            message: 'Modification',
-            buttons: [
-            {
-                label: 'Ok',
-                onClick: () => this.props.deleteUser(a)
-            },
-            {
-                label: 'Annuler',
+            customUI: ({ onClose }) => {
+              return (  
+                <div className="custom-ui" id="popup">
+                  <input className="modif" placeholder="this.props.user.prix"></input><br/><br/>
+                <center>
+                  <button className="btn btn-dark"
+                    onClick={() => {
+                      this.props.editRow(a);
+                      onClose();
+                    }}
+                  >
+                    Ok
+                  </button><a>&nbsp;&nbsp;</a>
+                  <button  className="btn btn-dark" onClick={onClose}>Annuler</button>
+                  </center>
+                </div>
+              );
             }
-            ]
-        })
+          })
     };
       render(){
             return (
@@ -65,7 +80,7 @@ class confirm extends Component {
                         )}
                     </tbody>
                 </table>
-	</center>
+                </center>	
             );
       }
 }

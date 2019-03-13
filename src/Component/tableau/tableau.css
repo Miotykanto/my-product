@@ -48,3 +48,9 @@ input{
 #suppr{
     background-color: brown;
 }
+
+#popup{
+    border-radius: 5px;
+    background-color:rgb(231, 145, 145);
+    padding: 20px 50px 20px 50px !important;
+}
