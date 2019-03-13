@@ -30,13 +30,22 @@ class confirm extends Component {
         confirmAlert({
             customUI: ({ onClose }) => {
               return (  
+               
                 <div className="custom-ui" id="popup">
-                  <input className="modif" placeholder="this.props.user.prix"></input><br/><br/>
+                  <input id="entree" className="modif"/><br/><br/>
+                  <div id="erreur"></div><br/>
                 <center>
                   <button className="btn btn-dark"
                     onClick={() => {
-                      this.props.editRow(a);
-                      onClose();
+                      if (isNaN(document.getElementById("entree").value)) {
+                        var valid="Entrer un nombre";
+                        document.getElementById('erreur').innerHTML= valid;
+                     } else {
+                        var valid="";
+                        document.getElementById('erreur').innerHTML= valid;
+                        this.editRow(a);
+                        
+                      }
                     }}
                   >
                     Ok
@@ -66,10 +75,14 @@ class confirm extends Component {
                                 <tr key={user.id}>
                                     <td>{user.id}</td>
                                     <td>{user.prod}</td>
-                                    <td className="prix">{user.prix}</td>
+                                    <td id="prix">{user.prix}</td>
                                     <td>
                                         <button className="btn btn-danger" onClick={()=>this.submit(user.id)}>X</button>
-                                        <a>&nbsp;</a><button type="submit" className="btn btn-success" onClick={() =>this.submit1(user.id)}>Edit</button>
+                                        <a>&nbsp;</a><button type="submit" className="btn btn-success"
+                                          onClick={() => {
+                                          console.log(user.prix);
+                                          this.submit1(user.prix)
+                                         }}>Edit</button>
                                     </td>
                                 </tr>
                             ))
@@ -80,10 +93,16 @@ class confirm extends Component {
                         )}
                     </tbody>
                 </table>
+                <button className="btn btn-warning" onClick={ () => {
+                  console.log(this.user.prix);
+                  
+                  var i=this.user.prix
+                  document.getElementById("somme").innerHTML=i
+                }}>TOTAL</button>
+                <div id="somme"></div>
                 </center>	
             );
       }
 }
 	
-
 export default confirm;
