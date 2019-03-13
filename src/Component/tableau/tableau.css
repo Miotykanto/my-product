@@ -1,0 +1,56 @@
+table{
+    margin-top: 10px;
+    background-color: rgb(123, 170, 170);
+    margin-bottom:10px;
+    border: 1px solid black;
+    width: 660px !important;
+    text-align: center;
+}
+
+.prix{
+    text-align: right !important;
+}
+
+center{
+    margin-bottom: 20px !important;
+}
+
+.act{
+    width: 70px;
+}
+th{
+    border: 1px solid black;
+}
+td{
+    background-color: white !important;
+    border: 1px solid black;
+}
+
+#suppr{
+    margin-bottom: 2px;
+    padding-top: 1px !important;
+    height: 20px;
+    font-size: 10px;
+    font-weight: bolder;
+    margin-left: 4px;
+   
+}
+
+#list{
+    background-color:rgb(92, 197, 216); 
+    background: rgb(197, 216, 213);
+}
+
+input{
+    background: red;
+}
+
+#suppr{
+    background-color: brown;
+}
+
+#popup{
+    border-radius: 5px;
+    background-color:rgb(231, 145, 145);
+    padding: 20px 50px 20px 50px !important;
+}

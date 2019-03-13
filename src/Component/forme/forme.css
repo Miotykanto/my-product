@@ -1,0 +1,30 @@
+input{
+    width: 200px;
+    height: 32px;
+    margin: 20px 5px 0px 5px !important;
+    border-radius: 2px;
+    background-color: rgb(248, 249, 250)!important;
+}
+
+label{
+    margin-left: 16px;
+    font-size: 20px; 
+}
+
+a{
+    margin-right: 23px;
+    font-size: 20px; 
+}
+#ajout{
+    font-weight: bolder;
+    color: rgb(240, 240, 245);
+}
+#test{
+    margin-left: 210px;
+}
+
+#valid{
+    margin-left: 350px;
+    color: red;
+    font-weight: bold;
+}
