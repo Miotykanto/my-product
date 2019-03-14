@@ -26,6 +26,18 @@ td{
     border: 1px solid black;
 }
 
+#somme {
+    text-align: left !important;
+  }
+
+  #e {
+    color: red;
+  }
+
+  .ar {
+    text-align: right !important;
+  } 
+
 #suppr{
     margin-bottom: 2px;
     padding-top: 1px !important;
