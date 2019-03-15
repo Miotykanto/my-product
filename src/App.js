@@ -17,17 +17,20 @@ const App = () => {
     const [count, setCount] = useState(0);
     const [ editing, setEditing ] = useState(false)
     
+    //Fonction updateUser
     const updateUser = (id, updatedUser) => {
       setEditing(false)
     
       setUsers(users.map(user => (user.id === id ? updatedUser : user)))
     }
 
+    //Fonction ajouter
     const ajouter = user => {
       user.id = count 
       setUsers([ ...users, user ])
     }
 
+    //Fonction somme
     const somme = user => {
       var tab = []
       var x =0;
@@ -38,10 +41,12 @@ const App = () => {
       document.getElementById("somme").innerHTML = 'TOTAL = ' + accounting.formatMoney (x);
     }    
 
+    //Fonction deleteUser
     const deleteUser = id => {
         setUsers(users.filter(user => user.id !== id))
     }
 
+    //Fonction editRow
   const editRow = user => {
     setEditing(true)
     setCurrentUser({ id: user.id, prod: user.prod, prix : user.prix })
@@ -52,7 +57,7 @@ const App = () => {
 
         <div className="flex-row">
           <div className="flex-large">
-            <Form ajouter={ajouter} setCount={setCount} count={count}/>
+            <Form ajouter={ajouter} setCount={setCount} count={count}/> 
           </div>
           <div className="flex-large">
             <Tableau users={users} deleteUser={deleteUser} editRow={editRow} editing={editing} setEditing={setEditing} updateUser={updateUser} somme={somme}/>

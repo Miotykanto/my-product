@@ -1,29 +1,8 @@
-/*!
- * accounting.js v0.4.2
- * Copyright 2014 Open Exchange Rates
- *
- * Freely distributable under the MIT license.
- * Portions of accounting.js are inspired or borrowed from underscore.js
- *
- * Full details and documentation:
- * http://openexchangerates.github.io/accounting.js/
- */
-
 (function(root, undefined) {
 
-	/* --- Setup --- */
-
-	// Create the local library object, to be exported or referenced globally later
 	var lib = {};
-
-	// Current version
 	lib.version = '0.4.2';
 
-
-	/* --- Exposed settings --- */
-
-	// The library's settings configuration object. Contains default parameters for
-	// currency and number formatting
 	lib.settings = {
 		currency: {
 			symbol : " Ar",		// default currency symbol is '$'
@@ -41,10 +20,6 @@
 		}
 	};
 
-
-	/* --- Internal Helper Methods --- */
-
-	// Store reference to possibly-available ECMAScript 5 methods for later
 	var nativeMap = Array.prototype.map,
 		nativeIsArray = Array.isArray,
 		toString = Object.prototype.toString;

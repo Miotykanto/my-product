@@ -15,6 +15,7 @@ const confirm = props => {
      }
 
             return (
+              // AJOUT
                 <center onSubmit={event => {
                   event.preventDefault()
                 }}>
@@ -47,7 +48,7 @@ const confirm = props => {
                                                   <h6>{user.prod}</h6><br/>
                                                   <button className="btn btn-dark"
                                                     onClick={() => {
-                                                      props.deleteUser(user.id);
+                                                      props.deleteUser(user.id); //Appel de la fonction deleteUser App.js
                                                       onClose();
                                                     }}
                                                   >
@@ -77,18 +78,16 @@ const confirm = props => {
                                                                                                               
                                                           <button className="btn btn-dark"
                                                           onClick={(e) => {
-                                                            // var valid="Entrer un nombre";
-                                                            var test = document.forms['ID_FORMULAIRE'].elements['inputStoreID'].value
-                                                              if (isNaN(test) || test=="") {
+                                                            user.prix = document.forms['ID_FORMULAIRE'].elements['inputStoreID'].value //Affectation du contenu de l'input dans user.prix 
+                                                              if (isNaN(user.prix) || user.prix=="") {
                                                                 var valid = "Entrer un Nombre"
                                                                 e.preventDefault()
-                                                                document.getElementById('e').innerHTML= valid;
+                                                                document.getElementById('e').innerHTML= valid; //Affichage de la variable valid dans le paragraphe e
                                                               } else {
                                                                 valid="";
                                                                 document.getElementById('e').innerHTML= valid;
-                                                                user.prix = document.forms['ID_FORMULAIRE'].elements['inputStoreID'].value;
-                                                                props.updateUser(user.prix, user)
-                                                                props.editRow(user.id);
+                                                                props.updateUser(user.prix, user) //Appel de la fonction updateUser App.js
+                                                                props.editRow(user.id); //Appel de la fonction editRow App.js
                                                                 onClose();
                                                               }
                                                             }
@@ -115,6 +114,7 @@ const confirm = props => {
                         )}
                     </tbody>
                 </table>
+                                                    {/* Appel de la fonction somme App.js */}
                 <button className="btn btn-warning" onClick={ () => {props.somme(user)}}>TOTAL</button><br/><br/>
                 <div id="somme" display="none">TOTAL = </div>
                 </center>	
