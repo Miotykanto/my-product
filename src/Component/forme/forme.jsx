@@ -29,7 +29,7 @@ const Form = props => {
                      x=x+user.prod.charAt(i).toLowerCase()
                   }
                   user.prod=user.prod.charAt(0).toUpperCase()+x;
-                     props.ajouter(user)
+                     props.ajouter(user)//Appel de la fonction ajouter App.js
                      props.setCount(props.count +1)
                   
                setUser(initial)
